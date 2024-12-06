@@ -19,6 +19,15 @@ dependencies:
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
 
+  #DB
+  shared_preferences: ^2.1.1 #tinydb
+  flutter_secure_storage: ^9.2.2 #난독화 tinydb
+
+  #etc
+  flutter_screenutil: 5.9.0 #화면 사이즈 controlling
+  animate_do: ^3.3.4 #애니메이션
+  audio_waveforms: ^1.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -38,9 +47,9 @@ flutter:
     - assets/imgs/
 
   fonts:
-    - family: Mogoung
+    - family: SeoulNamsan
       fonts:
-        - asset: assets/fonts/mogoung.ttf
-    - family: Ruerue
+        - asset: assets/fonts/SeoulNamsanM.ttf
+    - family: Pretendard
       fonts:
-        - asset: assets/fonts/ruerue.ttf
+        - asset: assets/fonts/PretendardVariable.ttf
