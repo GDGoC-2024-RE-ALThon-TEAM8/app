@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:team8/helper/extensions/showdialog_helper.dart';
 
 part 'home_viewmodel.g.dart';
 
@@ -27,6 +28,7 @@ class HomeViewModelState {
 class HomeViewModelController extends _$HomeViewModelController {
   late Timer _timer;
   int elasTime = 0;
+  String m4aFilePath = "";
 
   @override
   HomeViewModelState build() {
@@ -59,11 +61,19 @@ class HomeViewModelController extends _$HomeViewModelController {
         setState();
       });
     } else {
-      await state.recorderController.stop();
+      m4aFilePath = await state.recorderController.stop() ?? "";
       elasTime = 0;
       _timer.cancel();
+      ShowDialogHelper.showLoading();
+      Future.delayed(const Duration(milliseconds: 2400), (){
+        ShowDialogHelper.closeLoading();
+      });
     }
     setState();
+  }
+
+  void handleSend() {
+    print(m4aFilePath);
   }
 
   void startAnimation() {

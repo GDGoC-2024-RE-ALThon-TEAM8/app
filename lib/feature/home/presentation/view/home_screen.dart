@@ -157,7 +157,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: (){}, 
+                        onPressed: homeController.handleSend, 
                         child: Text(
                           '교정 시작',
                           style: AppTypography.namsanBody1.copyWith(

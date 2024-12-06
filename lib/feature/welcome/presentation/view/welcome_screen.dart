@@ -60,7 +60,6 @@ class _LoginPageState extends ConsumerState<WelcomeScreen> {
                       textAlign: TextAlign.center
                     ),
                     const Spacer(flex: 2),
-                    //회원가입 선택창 선택 전 이미지 보이기
                     !welcomeViewModel.showNext
                         ? ClipRRect(
                             borderRadius: BorderRadius.circular(30),
@@ -116,7 +115,6 @@ class _LoginPageState extends ConsumerState<WelcomeScreen> {
                     !welcomeViewModel.showNext
                         ? const Spacer(flex: 2)
                         : SizedBox(height: 30.h),
-                    //회원가입 선택방법 선택 이후 전화번호 otp 인증창
                     !welcomeViewModel.showNext
                         ? const Icon(
                             Icons.keyboard_arrow_down_rounded,
