@@ -20,7 +20,7 @@ WrongDetailModel _$WrongDetailModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WrongDetailModel {
-  String get syllable_1 => throw _privateConstructorUsedError;
+  String get syllable => throw _privateConstructorUsedError;
   String get modification_of_pronunciation =>
       throw _privateConstructorUsedError;
   String get how_to_improve => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $WrongDetailModelCopyWith<$Res> {
       _$WrongDetailModelCopyWithImpl<$Res, WrongDetailModel>;
   @useResult
   $Res call(
-      {String syllable_1,
+      {String syllable,
       String modification_of_pronunciation,
       String how_to_improve});
 }
@@ -62,14 +62,14 @@ class _$WrongDetailModelCopyWithImpl<$Res, $Val extends WrongDetailModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? syllable_1 = null,
+    Object? syllable = null,
     Object? modification_of_pronunciation = null,
     Object? how_to_improve = null,
   }) {
     return _then(_value.copyWith(
-      syllable_1: null == syllable_1
-          ? _value.syllable_1
-          : syllable_1 // ignore: cast_nullable_to_non_nullable
+      syllable: null == syllable
+          ? _value.syllable
+          : syllable // ignore: cast_nullable_to_non_nullable
               as String,
       modification_of_pronunciation: null == modification_of_pronunciation
           ? _value.modification_of_pronunciation
@@ -92,7 +92,7 @@ abstract class _$$WrongDetailModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String syllable_1,
+      {String syllable,
       String modification_of_pronunciation,
       String how_to_improve});
 }
@@ -110,14 +110,14 @@ class __$$WrongDetailModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? syllable_1 = null,
+    Object? syllable = null,
     Object? modification_of_pronunciation = null,
     Object? how_to_improve = null,
   }) {
     return _then(_$WrongDetailModelImpl(
-      syllable_1: null == syllable_1
-          ? _value.syllable_1
-          : syllable_1 // ignore: cast_nullable_to_non_nullable
+      syllable: null == syllable
+          ? _value.syllable
+          : syllable // ignore: cast_nullable_to_non_nullable
               as String,
       modification_of_pronunciation: null == modification_of_pronunciation
           ? _value.modification_of_pronunciation
@@ -135,7 +135,7 @@ class __$$WrongDetailModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$WrongDetailModelImpl implements _WrongDetailModel {
   _$WrongDetailModelImpl(
-      {required this.syllable_1,
+      {required this.syllable,
       required this.modification_of_pronunciation,
       required this.how_to_improve});
 
@@ -143,7 +143,7 @@ class _$WrongDetailModelImpl implements _WrongDetailModel {
       _$$WrongDetailModelImplFromJson(json);
 
   @override
-  final String syllable_1;
+  final String syllable;
   @override
   final String modification_of_pronunciation;
   @override
@@ -151,7 +151,7 @@ class _$WrongDetailModelImpl implements _WrongDetailModel {
 
   @override
   String toString() {
-    return 'WrongDetailModel(syllable_1: $syllable_1, modification_of_pronunciation: $modification_of_pronunciation, how_to_improve: $how_to_improve)';
+    return 'WrongDetailModel(syllable: $syllable, modification_of_pronunciation: $modification_of_pronunciation, how_to_improve: $how_to_improve)';
   }
 
   @override
@@ -159,8 +159,8 @@ class _$WrongDetailModelImpl implements _WrongDetailModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WrongDetailModelImpl &&
-            (identical(other.syllable_1, syllable_1) ||
-                other.syllable_1 == syllable_1) &&
+            (identical(other.syllable, syllable) ||
+                other.syllable == syllable) &&
             (identical(other.modification_of_pronunciation,
                     modification_of_pronunciation) ||
                 other.modification_of_pronunciation ==
@@ -172,7 +172,7 @@ class _$WrongDetailModelImpl implements _WrongDetailModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, syllable_1, modification_of_pronunciation, how_to_improve);
+      runtimeType, syllable, modification_of_pronunciation, how_to_improve);
 
   /// Create a copy of WrongDetailModel
   /// with the given fields replaced by the non-null parameter values.
@@ -193,7 +193,7 @@ class _$WrongDetailModelImpl implements _WrongDetailModel {
 
 abstract class _WrongDetailModel implements WrongDetailModel {
   factory _WrongDetailModel(
-      {required final String syllable_1,
+      {required final String syllable,
       required final String modification_of_pronunciation,
       required final String how_to_improve}) = _$WrongDetailModelImpl;
 
@@ -201,7 +201,7 @@ abstract class _WrongDetailModel implements WrongDetailModel {
       _$WrongDetailModelImpl.fromJson;
 
   @override
-  String get syllable_1;
+  String get syllable;
   @override
   String get modification_of_pronunciation;
   @override

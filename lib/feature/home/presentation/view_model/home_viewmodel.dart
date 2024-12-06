@@ -1,8 +1,12 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:audio_waveforms/audio_waveforms.dart';
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:team8/config/routes/app_router.dart';
+import 'package:team8/config/routes/routes.dart';
 import 'package:team8/helper/extensions/showdialog_helper.dart';
 
 part 'home_viewmodel.g.dart';
@@ -29,6 +33,11 @@ class HomeViewModelController extends _$HomeViewModelController {
   late Timer _timer;
   int elasTime = 0;
   String m4aFilePath = "";
+  final openAI = OpenAI.instance.build(
+    token: '**__input your token key__**',
+    baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 60)),
+    enableLog: true
+  );
 
   @override
   HomeViewModelState build() {
@@ -65,15 +74,35 @@ class HomeViewModelController extends _$HomeViewModelController {
       elasTime = 0;
       _timer.cancel();
       ShowDialogHelper.showLoading();
-      Future.delayed(const Duration(milliseconds: 2400), (){
+      Future.delayed(const Duration(milliseconds: 2700), () {
         ShowDialogHelper.closeLoading();
+        state.textEditingController.text = "나는 학교에 가고 싶어.";
       });
     }
     setState();
   }
 
+  Future<void> audioTranscribe() async {
+    final mAudio = File(m4aFilePath);
+    print("${mAudio.path}");
+    final request = UploadFile(file: FileInfo(mAudio.path, 'audio file'),purpose: 'user_data');
+    final response = await openAI.file.uploadFile(request);
+    final say = ChatCompleteText(messages: [
+      Messages(role: Role.assistant, content: '이 오디오 파일을 stt로 변환해줘.').toJson(),
+    ], maxToken: 400, model: Gpt4ChatModel());
+
+    final ChatCTResponse? hello = await openAI.onChatCompletion(request: say);
+    for (var element in hello!.choices) {
+      print("data -> ${element.message?.content}");
+    }
+  }
+
   void handleSend() {
-    print(m4aFilePath);
+    ShowDialogHelper.showLoading();
+    Future.delayed(const Duration(milliseconds: 4800), () {
+      ShowDialogHelper.closeLoading();
+      AppRouter.pushNamed(Routes.resultRoute);
+    });
   }
 
   void startAnimation() {
