@@ -15,12 +15,18 @@ class AppRouter {
         ? Routes.getRoute(routeName)
         : Routes.getRoute(Routes.notFoundScreenRoute);
 
-    return MaterialPageRoute<dynamic>(
-      builder: (_) => routeBuilder(),
+    return PageRouteBuilder<dynamic>(
+      pageBuilder: (_, __, ___) => routeBuilder(),
       settings: RouteSettings(
         name: routeName,
         arguments: settings.arguments,
       ),
+      transitionsBuilder: (_, animation, __, child) {
+        return FadeTransition(
+          opacity: animation,
+          child: child,
+        );
+      },
     );
   }
 

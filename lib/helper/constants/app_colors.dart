@@ -16,6 +16,9 @@ class AppColors {
   ///C0C0C0
   static const Color black3 = Color(0xFFC0C0C0);
 
+  ///7A7A81
+  static const Color black30 = Color(0xFF7A7A81);
+
   ///D1D1D7
   static const Color black40 = Color(0xFFD1D1D7);
 
@@ -43,9 +46,6 @@ class AppColors {
   /// light primary
   static const Color lightPrimary = Color(0xFFFCF4CE);
 
-  /// secondary
-  static const Color secondary = Color(0xFFCAE734);
-
   /// calendar 1 color
   static const Color calendar1 = Color(0xFFF1ECFF);
 
@@ -58,15 +58,23 @@ class AppColors {
   /// calendar 4 color
   static const Color calendar4 = Color(0xFFDFF2FC);
 
+  ///F2BB16
+  static const first = Color(0xFFF2BB16);
+  ///F2BB16
+  static const secondary = Color(0xFFF2BB16);
+  ///F2A71B
+  static const accent = Color(0xFFF2A71B);
+
 
   //preeetty
   //pretty design
-  static const backgroundDark = Color(0xFFDFE0FB);
-  static const textDark = Color(0xFF53585A);
-  static const textLight = Color(0xFFF5F5F5);
-  static const textFaded = Color(0xFF9899A5);
-  static const iconLight = Color(0xFFB1B4C0);
-  static const iconDark = Color(0xFFB1B3C1);
-  static const cardLight = Color(0xFFF9FAFE);
-  static const cardDark = Color(0xFF1D1A2D);
+  static const Color backgroundDark = Color(0xFFDFE0FB);
+  static const Color textDark = Color(0xFF53585A);
+  static const Color textLight = Color(0xFFF5F5F5);
+  static const Color textFaded = Color(0xFF9899A5);
+  static const Color iconLight = Color(0xFFB1B4C0);
+  static const Color iconDark = Color(0xFFB1B3C1);
+  static const Color cardLight = Color(0xFFF9FAFE);
+  static const Color cardDark = Color(0xFF1D1A2D);
+  static const Color blue10 = Color(0xFF407DD4);
 }
