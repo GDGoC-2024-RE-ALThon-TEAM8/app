@@ -6,7 +6,7 @@ part 'wrong_detail_model.g.dart';
 @freezed
 class WrongDetailModel with _$WrongDetailModel {
   factory WrongDetailModel({
-    required String syllable_1,
+    required String syllable,
     required String modification_of_pronunciation,
     required String how_to_improve,
   }) = _WrongDetailModel;

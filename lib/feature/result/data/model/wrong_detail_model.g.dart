@@ -9,7 +9,7 @@ part of 'wrong_detail_model.dart';
 _$WrongDetailModelImpl _$$WrongDetailModelImplFromJson(
         Map<String, dynamic> json) =>
     _$WrongDetailModelImpl(
-      syllable_1: json['syllable_1'] as String,
+      syllable: json['syllable'] as String,
       modification_of_pronunciation:
           json['modification_of_pronunciation'] as String,
       how_to_improve: json['how_to_improve'] as String,
@@ -18,7 +18,7 @@ _$WrongDetailModelImpl _$$WrongDetailModelImplFromJson(
 Map<String, dynamic> _$$WrongDetailModelImplToJson(
         _$WrongDetailModelImpl instance) =>
     <String, dynamic>{
-      'syllable_1': instance.syllable_1,
+      'syllable': instance.syllable,
       'modification_of_pronunciation': instance.modification_of_pronunciation,
       'how_to_improve': instance.how_to_improve,
     };
